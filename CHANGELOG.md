@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/konstellation-io/release-workflow-poc/compare/v1.0.1...v1.0.2) (2023-06-14)
+
+
+### Bug Fixes
+
+* gh user ([291d149](https://github.com/konstellation-io/release-workflow-poc/commit/291d1498ca660c936cf9217f07600e8833c8b238))
+
 ## [1.0.1](https://github.com/konstellation-io/release-workflow-poc/compare/v1.0.0...v1.0.1) (2023-06-14)
 
 
