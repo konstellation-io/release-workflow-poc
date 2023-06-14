@@ -17,8 +17,3 @@ package2:
     tag: "develop"
   hello: world
   new: this
-package3:
-  new: 1
-  other: 1
-  image:
-    tag: "develop"
