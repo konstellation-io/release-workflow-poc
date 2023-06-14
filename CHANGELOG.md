@@ -1,3 +1,10 @@
+# [1.1.0-rc.1](https://github.com/konstellation-io/release-workflow-poc/compare/v1.0.2...v1.1.0-rc.1) (2023-06-14)
+
+
+### Features
+
+* add a new feature ([feed79f](https://github.com/konstellation-io/release-workflow-poc/commit/feed79f82172d57a5887b4f6d79da17fd31a5d2b))
+
 ## [1.0.2](https://github.com/konstellation-io/release-workflow-poc/compare/v1.0.1...v1.0.2) (2023-06-14)
 
 
