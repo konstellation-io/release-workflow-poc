@@ -17,3 +17,4 @@ package2:
     tag: "develop"
   hello: world
   new: this
+  other: value
