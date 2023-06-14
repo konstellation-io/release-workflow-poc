@@ -6,21 +6,19 @@ package1:
     repository: nginx
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "1.0.2"
+    tag: "1.1.0-rc.2"
   hello: world
   new: this
-  another: one
 package2:
   image:
     repository: nginx
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "1.0.2"
+    tag: "1.1.0-rc.2"
   hello: world
   new: this
 package3:
   new: 1
   other: 1
   image:
-    tag: 1.0.2
-    feat: ure
+    tag: "1.1.0-rc.2"
