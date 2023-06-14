@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/konstellation-io/release-workflow-poc/compare/v1.1.0...v2.0.0) (2023-06-14)
+
+
+### chore
+
+* remove package3 ([5047050](https://github.com/konstellation-io/release-workflow-poc/commit/5047050fbfa272744fefe6548b4bf9778d865995))
+
+
+### BREAKING CHANGES
+
+* package3 has been removed
+
 # [2.0.0-rc.1](https://github.com/konstellation-io/release-workflow-poc/compare/v1.1.0...v2.0.0-rc.1) (2023-06-14)
 
 
