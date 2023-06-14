@@ -1,0 +1,22 @@
+{
+  "branches": ["main", {"name": "release/*", "prerelease": "rc"}, {"name": "hotfix/*", "prerelease": "hotfix"}],
+  "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog", {
+          "changelogFile": "CHANGELOG.md"
+      },
+      ["@semantic-release/exec", {
+        "prepareCmd": "./scripts/publish.sh ${nextRelease.version}"
+      }],
+      ["@semantic-release/git", {
+        "assets": [
+          "helm/workflow-poc/values.yaml",
+          "helm/workflow-poc/Chart.yaml",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
+      }],
+      "@semantic-release/github"
+  ]
+}

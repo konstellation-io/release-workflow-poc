@@ -1,0 +1,60 @@
+name: "Release"
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+      - "release/**"
+      - "hotfix/**"
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        persist-credentials: false
+        token: ${{ secrets.PAT_TOKEN }}
+        fetch-depth: 0
+
+    - name: Install Chart Releaser
+      uses: helm/chart-releaser-action@v1.5.0
+      with:
+        install_only: true
+        version: v1.5.0
+    
+    - name: get repository name
+      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+
+    - name: Semantic Release
+      uses: cycjimmy/semantic-release-action@v3
+      id: semantic-release
+      with:
+        extra_plugins: |
+          @semantic-release/exec
+          @semantic-release/changelog
+          @semantic-release/git
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+    
+    - name: get repository name
+      run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+    
+    - name: Release Chart 
+      if: steps.semantic-release.outputs.new_release_published == 'true' && github.ref == 'refs/heads/main'
+      run: ./scripts/release_chart.sh
+      env:
+        REPOSITORY_OWNER: ${{ github.repository_owner }}
+        REPOSITORY_NAME: ${{ env.REPOSITORY_NAME }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GIT_AUTHOR_NAME: "Angel Luis Piquero"
+        GIT_AUTHOR_EMAIL: "angelluis.piquero@intelygenz.com"
+
+    # - name: helm push
+    #   if: steps.semantic-release.outputs.new_release_published == 'true'
+    #   run: |
+    #     echo ${{ secrets.PAT_TOKEN }} | helm registry login ghcr.io -u $ --password-stdin
+    #     helm package helm/workflow-poc
+    #     helm push workflow-poc-${{ steps.semantic-release.outputs.new_release_version }}.tgz oci://ghcr.io/${{ gisitory_owner }}thub.repository_owner }}
