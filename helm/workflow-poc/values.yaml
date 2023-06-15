@@ -18,3 +18,4 @@ package2:
   hello: world
   new: this
   other: value
+  fix: value
