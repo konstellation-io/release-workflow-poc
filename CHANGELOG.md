@@ -14,6 +14,14 @@
 * more features ([6f8352e](https://github.com/konstellation-io/release-workflow-poc/commit/6f8352e3b1668f3d703681f122ed8a84f00ef0ff))
 * other fix ([a18c3d8](https://github.com/konstellation-io/release-workflow-poc/commit/a18c3d82fae46d6b4011119311a1cc6e6c290315))
 
+# [2.2.0-rc.1](https://github.com/konstellation-io/release-workflow-poc/compare/v2.1.0...v2.2.0-rc.1) (2023-06-15)
+
+
+### Features
+
+* more features ([6f8352e](https://github.com/konstellation-io/release-workflow-poc/commit/6f8352e3b1668f3d703681f122ed8a84f00ef0ff))
+* other fix ([a18c3d8](https://github.com/konstellation-io/release-workflow-poc/commit/a18c3d82fae46d6b4011119311a1cc6e6c290315))
+
 # [2.1.0](https://github.com/konstellation-io/release-workflow-poc/compare/v2.0.1...v2.1.0) (2023-06-15)
 
 
