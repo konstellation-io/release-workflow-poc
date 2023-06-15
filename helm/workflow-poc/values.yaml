@@ -10,6 +10,7 @@ package1:
   hello: world
   new: this
   more: features
+  other: fix
 package2:
   image:
     repository: nginx
