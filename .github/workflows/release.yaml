@@ -46,9 +46,40 @@ jobs:
     
     - name: get repository name
       run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
-    
-    - name: Release Chart 
-      if: steps.semantic-release.outputs.new_release_published == 'true' && github.ref == 'refs/heads/main'
+    outputs:
+      new_release_published: ${{ steps.semantic-release.outputs.new_release_published }}
+
+  build_push:
+    strategy:
+      matrix:
+        services:
+          - "package1"
+          - "package2"
+    runs-on: ubuntu-latest
+    needs: release
+    if: needs.release.outputs.new_release_published == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: ${{ matrix.services }}
+          file: ${{ matrix.services }}/Dockerfile
+          push: false
+          tags: |
+            ${{ matrix.services }}:${{ github.sha }}
+            ${{ matrix.services }}:${{ github.ref_name }}
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    needs:
+      - build_push
+    if: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+    - name: Publish Chart
       run: ./scripts/release_chart.sh
       env:
         REPOSITORY_OWNER: ${{ github.repository_owner }}

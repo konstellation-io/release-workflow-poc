@@ -15,7 +15,7 @@
           "helm/workflow-poc/Chart.yaml",
           "CHANGELOG.md"
         ],
-        "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
+        "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes} [skip ci]"
       }],
       "@semantic-release/github"
   ]
