@@ -1,5 +1,5 @@
 {
-  "branches": ["main", {"name": "release/*", "prerelease": "rc"}, {"name": "hotfix/*", "prerelease": "hotfix"}],
+  "branches": ["main", {"name": "release/*", "prerelease": "rc", "channel": "release"}, {"name": "hotfix/*", "prerelease": "hot", "channel": "hotfix"}],
   "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
