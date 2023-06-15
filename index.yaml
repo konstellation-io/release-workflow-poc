@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   workflow-poc:
   - apiVersion: v2
+    appVersion: 2.0.1
+    created: "2023-06-15T09:08:51.906541477Z"
+    description: A Helm chart for Kubernetes
+    digest: 1e622e29c85bed8a5019800e58170f2237a8055d7a70f870649abd0275587c50
+    name: workflow-poc
+    type: application
+    urls:
+    - https://github.com/konstellation-io/release-workflow-poc/releases/download/workflow-poc-2.0.1/workflow-poc-2.0.1.tgz
+    version: 2.0.1
+  - apiVersion: v2
     appVersion: 2.0.0
     created: "2023-06-14T20:00:18.503807093Z"
     description: A Helm chart for Kubernetes
@@ -31,4 +41,4 @@ entries:
     urls:
     - https://github.com/konstellation-io/release-workflow-poc/releases/download/workflow-poc-1.0.2/workflow-poc-1.0.2.tgz
     version: 1.0.2
-generated: "2023-06-14T20:00:18.503824793Z"
+generated: "2023-06-15T09:08:51.906559377Z"
