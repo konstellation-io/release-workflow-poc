@@ -9,6 +9,7 @@ package1:
     tag: "develop"
   hello: world
   new: this
+  more: features
 package2:
   image:
     repository: nginx
