@@ -1,3 +1,11 @@
+## [2.0.1-rc.1](https://github.com/konstellation-io/release-workflow-poc/compare/v2.0.0...v2.0.1-rc.1) (2023-06-15)
+
+
+### Bug Fixes
+
+* fake fix ([a87f7d3](https://github.com/konstellation-io/release-workflow-poc/commit/a87f7d3f36f6c56b3c9e25bf61f57311401f9b50))
+* new value ([1de31cf](https://github.com/konstellation-io/release-workflow-poc/commit/1de31cfaf1522dba8758057f2af2f5dedb1bff14))
+
 # [2.0.0](https://github.com/konstellation-io/release-workflow-poc/compare/v1.1.0...v2.0.0) (2023-06-14)
 
 
