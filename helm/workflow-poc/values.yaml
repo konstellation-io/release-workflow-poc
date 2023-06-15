@@ -19,3 +19,4 @@ package2:
   new: this
   other: value
   fix: value
+  next: value
